@@ -10,14 +10,17 @@ function createBoxes(amount) {
 
   destroyBoxes();
 
+  const piece = document.createDocumentFragment();
+
   for (let i = 0; i < amount; i++) {
     const boxSize = 30 + i * 10;
     const box = document.createElement('div');
     box.style.width = `${boxSize}px`;
     box.style.height = `${boxSize}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxesContainer.appendChild(box);
+    piece.appendChild(box);
   }
+  boxesContainer.appendChild(piece);
 }
 
 function destroyBoxes() {
